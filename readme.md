@@ -32,3 +32,30 @@ Body参数：{
     
 }
 
+
+## 开发文档
+
+第一步、最小实现模型
+
+设计：使用Mysql本地数据库，设计简单的用户数据表，使用gorm和gin实现最基本的查询。不使用object存储信息。
+
+数据库设计：第一个最简单的版本中数据库 archive中仅有一个user表
+
+user表的字段包含如下：
+
+ id int 64 主键 非空 非重复 默认自增 // 用户ID
+
+ username varchar 64 非空 非重复 // 用户名
+
+ password varchar 64 非空 //密码
+
+ gender varchar 20 非空 //在后续版本中做约束
+
+ age int 20 非空 //年龄
+
+ 状态 int 8 default 0 // 状态 0默认启用 在后续版本中做约束
+
+
+
+
+
