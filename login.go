@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm/schema"
 )
 
+// model
 type User struct {
 	id       int
 	username string
@@ -17,6 +18,7 @@ type User struct {
 	status   int
 }
 
+// main
 func main() {
 
 	var DB, err = connect()
@@ -34,6 +36,7 @@ func main() {
 
 }
 
+// connect and init
 func connect() (gorm.DB, error) {
 
 	dsn := "root@tcp(127.0.0.1:3306)/archive?charset=utf8mb4&parseTime=True&loc=Local"
@@ -49,6 +52,7 @@ func connect() (gorm.DB, error) {
 	return *db, nil
 }
 
+// query for login
 func query(db gorm.DB) *User {
 	var user User
 	db.Where("username = ?", "Jake").Find(&user)
