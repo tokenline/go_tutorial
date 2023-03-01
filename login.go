@@ -9,7 +9,7 @@ import (
 )
 
 type User struct {
-	index    int
+	id       int
 	username string
 	password string
 	gender   string
